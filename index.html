@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Train Scheduler</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  </head> 
+  <body>
+    <div id="container">
+      
+      <header>
+      	<h1>Train Scheduler</h1>
+        <p>Calculate your train's next arrival time.</p>
+      </header>
+
+      <br>
+      <div id="table_container">
+        <table>
+          <caption>Current Train Schedule</caption>
+          <thead>
+            <tr>
+              <th>Train Name</th>
+              <th>Destination</th>
+              <th>Frequency (min)</th>
+              <th>Next Arrival</th>
+              <th>Minutes Away</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Matt Express</td>
+              <td>Portland, Oregon</td>
+              <td>45</td>
+              <td>05:30 PM</td>
+              <td>20</td>
+            </tr>
+            <tr>
+              <td>Chug-Along</td>
+              <td>Mexico City, Mexico</td>
+              <td>15</td>
+              <td>02:00 AM</td>
+              <td>15</td>
+            </tr>
+            <tr>
+              <td>Pain Train</td>
+              <td>New York, New York</td>
+              <td>60</td>
+              <td>04:30 AM</td>
+              <td>45</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <br>
+
+      <h2>Add Train</h2>
+      <form>
+        <label for="train-name">Train Name</label><br>
+        <input type="text" name="train-name" id="train-name"><br>
+        <label for="destination">Destination</label><br>
+        <input type="text" name="destination" id="destination"><br>
+        <label for="first-train-time">First Train Time (HH:mm - military time)</label><br>
+        <input type="text" name="first-train-time" id="first-train-time"><br>
+        <label for="frequency">Frequency (min)</label><br>
+        <input type="text" name="frequency" id="frequency"><br>
+        <button type="submit" id="submit">Submit</button>
+      </form>
+
+    </div>
+
+  <!-- jquery -->
+  <script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+  <!-- firebase -->
+  <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
+  <!-- momentjs -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.0/moment.min.js"></script>
+  <!-- app -->
+  <script type="text/javascript" src="assets/javascript/app.js"></script>
+  </body>
+</html>

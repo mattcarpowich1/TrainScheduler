@@ -1,0 +1,150 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: #9a9a9a;
+}
+
+#container {
+  margin: 0 auto;
+  width: 90%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+header {
+  /*background: rgb(58, 120, 175);*/
+  background: linear-gradient(to right, rgb(54, 0, 51), rgb(11, 135, 147));
+  margin: 0 auto;
+  width: 100%;
+  color: white;
+  padding: 60px 0px 60px 0px;
+  border-radius: 5px;
+}
+
+h1 {
+  font-size: 4em;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+header > p {
+  font-weight: 300;
+  font-size: 1.2em;
+  text-align: center;
+}
+
+#table_container {
+  margin: 0 auto;
+  width: 100%;
+  background-color: white;
+  opacity: .9;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 5px;
+
+}
+
+table {
+  margin: 0 auto;
+  width: 100%;
+  /*border: 1px solid rgb(58, 120, 175);*/
+/*  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;*/
+  background-color: white;
+  opacity: .9;
+  color: #121212;
+}
+
+caption {
+  background: white;
+  color: #121212;
+  /*border-top-left-radius: 8px;
+  border-top-right-radius: 8px;*/
+  font-size: 1.2em;
+  padding: 5px 0px 10px 0px;
+  text-align: center;
+}
+
+th, caption {
+  font-weight: 600;
+}
+
+tbody > tr {
+  font-weight: 300;
+}
+
+td, th {
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  padding: 10px;
+  color: #121212;
+}
+
+thead, tbody, tr {
+  width: 100%;
+}
+
+tr {
+  border-bottom: 1px solid #ababab;
+}
+
+tbody > tr:last-child {
+  border-bottom: none;
+  padding-bottom: 0px;
+}
+
+tbody > tr:last-child > td {
+  padding-bottom: 5px;
+}
+
+form {
+  background-color: white;
+  margin: 0 auto;
+  padding: 10px;
+  line-height: 1.5em;
+  color: #121212;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+label {
+  color: inherit;
+}
+
+h2 {
+  background: #121212;
+  color: white; 
+  padding: 10px;
+  font-weight: 600;
+  font-size: 1.2em;
+  text-align: center;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+}
+
+input[type=text] {
+  margin: 0 auto;
+  width: calc(100% - 10px);
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background-color: white;
+  opacity: 1;
+}
+
+#submit {
+  margin-top: .5em;
+  background-color: #0b8793;
+  font-family: inherit;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1em;
+}
