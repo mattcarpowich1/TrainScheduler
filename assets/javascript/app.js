@@ -14,6 +14,9 @@ $(function() {
 
   var database = firebase.database();
 
+  // this will be used to make sure time format is valid
+  var regexp = /^([0-1]?[0-9]|2[0-3])(:[0-5][0-9])?$/;
+
   $("form").on("submit", function(event) {
     // prevent default form behavior
     event.preventDefault();
@@ -23,6 +26,27 @@ $(function() {
     var destination = $("#destination").val().trim();
     var firstTrainTime = $("#first-train-time").val().trim();
     var frequency = $("#frequency").val().trim();
+
+    // check if all fields of the form have content
+    if (!(trainName !== "" && 
+        destination !== "" &&
+        firstTrainTime !== "" && 
+        frequency !== "")) {
+      console.log("Not all fields were entered");
+
+      // display a message telling user to fill out all fields
+      $("#message").text("Please fill out the entire form.");
+
+      return false;
+    }
+
+    // check if the time entered is valid HH:mm format
+    if (!(firstTrainTime.match(regexp))) {
+      $("#message").text("Please enter a valid time.");
+      return false;
+    }
+
+    $("#message").empty();
 
     // update database
     database.ref().push({
@@ -61,15 +85,29 @@ $(function() {
     // find the difference in minutes between now and the initial departure
     var diff = parseInt(now.diff(initialDeparture, 'minutes'));
 
-    console.log("Difference: " + diff);
+    var minutesAway;
+    var nextArrival;
+
+    // if the difference is negative, the next arriving train will be the initial 
+    // departure time
+    if (diff < 0) {
+      minutesAway = diff * -1;
+      nextArrival = initialDeparture;
+    } else {
+
+      console.log("Difference: " + diff);
+      
+      // calculate the remainder between the difference and the frequency
+      // in order to determine the next train's arrival time
+      minutesAway = frequency - (diff % frequency);
+
+      nextArrival = now.add(minutesAway, 'minutes');
+
+      console.log("Minutes away: " + minutesAway);
+
+    }
+
     
-    // calculate the remainder between the difference and the frequency
-    // in order to determine the next train's arrival time
-    var minutesAway = frequency - (diff % frequency);
-
-    console.log("Minutes away: " + minutesAway);
-
-    var nextArrival = now.add(minutesAway, 'minutes');
     nextArrival = nextArrival.format("hh:mm A");
 
     //add stuff to the table
