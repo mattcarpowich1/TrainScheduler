@@ -32,7 +32,6 @@ $(function() {
         destination !== "" &&
         firstTrainTime !== "" && 
         frequency !== "")) {
-      console.log("Not all fields were entered");
 
       // display a message telling user to fill out all fields
       $("#message").text("Please fill out the entire form.");
@@ -74,10 +73,10 @@ $(function() {
 
     // convert first train time into a moment object and store in variable
     var initialDeparture = moment();
+
+    // set the time of this moment object to the initial departure time
     initialDeparture.hour(firstTrainTime.substring(0, 2));
     initialDeparture.minute(firstTrainTime.substring(3, 5));
-
-    console.log("Initial Departure: " + initialDeparture.format("HH:mm"));
 
     // save the current time
     var now = moment();
@@ -93,21 +92,13 @@ $(function() {
     if (diff < 0) {
       minutesAway = diff * -1;
       nextArrival = initialDeparture;
-    } else {
-
-      console.log("Difference: " + diff);
-      
+    } else {     
       // calculate the remainder between the difference and the frequency
       // in order to determine the next train's arrival time
       minutesAway = frequency - (diff % frequency);
-
       nextArrival = now.add(minutesAway, 'minutes');
-
-      console.log("Minutes away: " + minutesAway);
-
     }
 
-    
     nextArrival = nextArrival.format("hh:mm A");
 
     //add stuff to the table
@@ -128,7 +119,5 @@ $(function() {
     $("tbody").append($tableRow);
 
   });
-
-
 
 });

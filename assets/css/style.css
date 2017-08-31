@@ -4,26 +4,30 @@
 
 body {
   font-family: 'Open Sans', sans-serif;
-  background-color: #343434;
-  /*background-image: url("../images/black.jpg");*/
+  background-color: #5cb0e8;
 }
 
 #container {
   margin: 0 auto;
-  width: 90%;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  width: 95%;
+  padding-top: 1.25vw;
+  padding-bottom: 1.25vw;
+}
+
+#content {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
 }
 
 header {
-  /*background: rgb(58, 120, 175);*/
-  /*background: linear-gradient(to right, rgb(54, 0, 51), rgb(11, 135, 147));*/
-  background: linear-gradient(to bottom, rgb(86, 204, 242), rgb(47, 128, 237));
+  background: #FFC914;
   margin: 0 auto;
   width: 100%;
-  color: white;
+  color: #2E282A;
   padding: 60px 0px 60px 0px;
-  border-radius: 5px;
+  border-radius: 2px;
+  margin-bottom: 1.25vw;
 }
 
 h1 {
@@ -40,35 +44,31 @@ header > p {
 }
 
 #table_container {
-  margin: 0 auto;
-  width: 100%;
-  background-color: white;
-  opacity: .9;
+  width: 69%;
   padding-top: 5px;
   padding-bottom: 5px;
-  border-radius: 5px;
+  border-radius: 2px;
+}
 
+#form_container {
+  width: 29%;
 }
 
 table {
   margin: 0 auto;
   width: 100%;
-  /*border: 1px solid rgb(58, 120, 175);*/
-/*  border-bottom-left-radius: 8px;
-  border-bottom-right-radius: 8px;*/
-  background-color: white;
-  opacity: .9;
-  color: #121212;
+}
+
+#table_container, table, caption, th {
+  background-color: #2E282A;
+  color: #FFC914;
 }
 
 caption {
-  background: white;
-  color: #121212;
-  /*border-top-left-radius: 8px;
-  border-top-right-radius: 8px;*/
   font-size: 1.2em;
   padding: 5px 0px 10px 0px;
   text-align: center;
+  color: #FFFCF9;
 }
 
 th, caption {
@@ -82,11 +82,13 @@ tbody > tr {
 td, th {
   padding: 10px;
   text-align: left;
+  font-size: .8em;
+  /*width: 20%;*/
 }
 
 th {
   padding: 10px;
-  color: #121212;
+  color: #FFFCF9;
 }
 
 thead, tbody, tr {
@@ -94,7 +96,7 @@ thead, tbody, tr {
 }
 
 tr {
-  border-bottom: 1px solid #ababab;
+  border-bottom: 1px solid #FFFCF9;
 }
 
 tbody > tr:last-child {
@@ -107,13 +109,14 @@ tbody > tr:last-child > td {
 }
 
 form {
-  background-color: white;
+  background-color: #FFFCF9;
   margin: 0 auto;
   padding: 10px;
   line-height: 1.5em;
-  color: #121212;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
+  color: #2E282A;
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+  font-size: .9em;
 }
 
 label {
@@ -121,14 +124,14 @@ label {
 }
 
 h2 {
-  background: linear-gradient(to bottom, rgb(86, 204, 242), rgb(47, 128, 237));
-  color: white; 
+  background: #2E282A;
+  color: #FFFCF9; 
   padding: 10px;
   font-weight: 600;
   font-size: 1.2em;
   text-align: center;
-  border-top-right-radius: 5px;
-  border-top-left-radius: 5px;
+  border-top-right-radius: 2px;
+  border-top-left-radius: 2px;
 }
 
 input[type=text] {
@@ -138,21 +141,110 @@ input[type=text] {
   font-size: inherit;
   color: inherit;
   background-color: hsl(0, 0%, 100%);
-  border-radius: 3px;
-  border: 1px solid #ddd;
+  border-radius: 2px;
+  border: 1px solid #cdcdcd;
 }
 
 #submit {
   margin-top: .5em;
-  background: linear-gradient(to bottom, rgb(86, 204, 242), rgb(47, 128, 237));
+  background: #FFC914;
   font-family: inherit;
-  color: white;
+  color: #2E282A;
   border: none;
-  border-radius: 4px;
-  font-size: 1em;
+  border-radius: 2px;
+  font-size: inherit;
 }
 
 #message {
   margin-top: .5em;
   color: #d82f2f;
 }
+
+
+/* MAX WIDTH 1200 PX */
+@media screen and (max-width: 1200px) {
+  #content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #form_container {
+    width: 100%;
+  }
+
+  #table_container {
+    width: 100%;
+    margin-bottom: 1.25vw;
+  }
+
+}
+
+/* MAX WIDTH 768 PX */
+@media screen and (max-width: 768px) {
+  header {
+    padding: 45px 0px 45px 0px;
+  }
+
+  h1 {
+    font-size: 8vw;
+  }
+
+  header p {
+    font-size: 2.5vw;
+  }
+
+  td, th {
+    font-size: 1.75vw;
+  }
+
+}
+
+/* MAX WIDTH 600 PX */
+@media screen and (max-width: 600px) {
+  header {
+    padding: 3.75vw 0px 3.75vw 0px;
+  }
+
+  h1 {
+    margin-bottom: 1.875vw;
+  }
+
+  header p {
+    font-size: 3vw;
+  }
+
+  td, th {
+    font-size: 1.9vw;
+  }
+
+}
+
+/* MAX WIDTH 480 PX */
+@media screen and (max-width: 480px) {
+  header {
+    padding: 3.75vw 0px 3.75vw 0px;
+  }
+
+  h1 {
+    margin-bottom: 1.875vw;
+  }
+
+  caption, h2 {
+    font-size: 3.75vw;
+  }
+
+  header p {
+    font-size: 3vw;
+  }
+
+  form {
+    font-size: 3.75vw;
+  }
+
+  td, th {
+    font-size: 2.2vw;
+  }
+
+}
+
