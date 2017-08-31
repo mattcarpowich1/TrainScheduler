@@ -22,25 +22,34 @@ body {
 
 header {
   background: #FFC914;
+  background-image: url("../images/train2.png");
+  background-repeat: no-repeat;
+  background-position: right;
   margin: 0 auto;
   width: 100%;
-  color: #2E282A;
-  padding: 60px 0px 60px 0px;
+  color: #2e282a;
+  padding: 3.75vw 0px 3.75vw 0px;
   border-radius: 2px;
   margin-bottom: 1.25vw;
+  box-shadow: 0px 3px 17px 0px rgba(46,40,42,0.37);
+}
+
+
+header > * {
+  margin-left: 3.75vw;
 }
 
 h1 {
-  font-size: 4em;
+  font-size: 4.5em;
   font-weight: 600;
-  text-align: center;
+  text-align: left;
   margin-bottom: 10px;
 }
 
 header > p {
   font-weight: 300;
-  font-size: 1.2em;
-  text-align: center;
+  font-size: 1.5em;
+  text-align: left;
 }
 
 #table_container {
@@ -48,6 +57,7 @@ header > p {
   padding-top: 5px;
   padding-bottom: 5px;
   border-radius: 2px;
+  box-shadow: 0px 3px 17px 0px rgba(46,40,42,0.37);
 }
 
 #form_container {
@@ -60,7 +70,7 @@ table {
 }
 
 #table_container, table, caption, th {
-  background-color: #2E282A;
+  background-color: #2e282a;
   color: #FFC914;
 }
 
@@ -96,7 +106,7 @@ thead, tbody, tr {
 }
 
 tr {
-  border-bottom: 1px solid #FFFCF9;
+  border-bottom: 1px solid #5cb0e8;
 }
 
 tbody > tr:last-child {
@@ -113,10 +123,11 @@ form {
   margin: 0 auto;
   padding: 10px;
   line-height: 1.5em;
-  color: #2E282A;
+  color: #2e282a;
   border-bottom-left-radius: 2px;
   border-bottom-right-radius: 2px;
   font-size: .9em;
+  box-shadow: 0px 3px 17px 0px rgba(46,40,42,0.37);
 }
 
 label {
@@ -136,7 +147,7 @@ h2 {
 
 input[type=text] {
   margin: 0 auto;
-  width: calc(100% - 10px);
+  width: calc(100% - 5px);
   font-family: inherit;
   font-size: inherit;
   color: inherit;
@@ -149,7 +160,7 @@ input[type=text] {
   margin-top: .5em;
   background: #FFC914;
   font-family: inherit;
-  color: #2E282A;
+  color: #2e282a;
   border: none;
   border-radius: 2px;
   font-size: inherit;
@@ -178,6 +189,25 @@ input[type=text] {
     margin-bottom: 1.25vw;
   }
 
+}
+
+/* MAX WIDTH 1049 PX */
+@media screen and (max-width: 1049px) {
+    header {
+      background-image: none;
+    }
+
+    header > * {
+      margin-left: 0;
+    }
+
+    h1 {
+    text-align: center;
+  }
+
+  header > p {
+    text-align: center;
+  }
 }
 
 /* MAX WIDTH 768 PX */
@@ -239,6 +269,10 @@ input[type=text] {
   }
 
   form {
+    font-size: 3.75vw;
+  }
+
+  #submit {
     font-size: 3.75vw;
   }
 
