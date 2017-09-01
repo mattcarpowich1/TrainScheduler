@@ -17,6 +17,9 @@ $(function() {
   // this will be used to make sure time format is valid
   var regexp = /^([0-1]?[0-9]|2[0-3])(:[0-5][0-9])?$/;
 
+  // this will be used to make sure frequency input is a number
+  var regexpNum = new RegExp('^[0-9]+$');
+
   $("form").on("submit", function(event) {
     // prevent default form behavior
     event.preventDefault();
@@ -42,6 +45,12 @@ $(function() {
     // check if the time entered is valid HH:mm format
     if (!(firstTrainTime.match(regexp))) {
       $("#message").text("Please enter a valid time.");
+      return false;
+    }
+
+    // check if frequency value is a number
+    if (!(frequency.match(regexpNum))) {
+      $("#message").text("Please enter a valid frequency.");
       return false;
     }
 
