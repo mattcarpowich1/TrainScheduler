@@ -273,7 +273,7 @@ input[type=text] {
   }
 
   #submit {
-    font-size: 3.75vw;
+    font-size: inherit;
   }
 
   td, th {
