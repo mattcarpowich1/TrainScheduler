@@ -93,7 +93,6 @@ td, th {
   padding: 10px;
   text-align: left;
   font-size: .8em;
-  /*width: 20%;*/
 }
 
 th {
@@ -281,4 +280,3 @@ input[type=text] {
   }
 
 }
-
