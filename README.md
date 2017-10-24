@@ -1,2 +1,4 @@
 # TrainScheduler
-Homework 7
+Train Scheduling app using JQuery and Firebase. 
+
+LINK: https://mattcarpowich1.github.io/TrainScheduler/ 
